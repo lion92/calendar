@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Manager</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Schedule Manager</h1>
+
+    <div class="year-selector">
+        <label for="year-select">Select Year:</label>
+        <select id="year-select"></select>
+    </div>
+
+    <button id="toggle-view">Switch to Yearly View</button>
+
+    <div id="calendar-monthly">
+        <div id="month-year"></div>
+        <div id="days-of-week">
+            <span>Sun</span>
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+        </div>
+        <div id="calendar-days"></div>
+    </div>
+
+    <div id="calendar-yearly" style="display:none;">
+        <!-- The yearly calendar will be dynamically generated here -->
+    </div>
+
+    <form id="add-event-form" style="display:none;">
+        <h2>Add Event</h2>
+        <input type="text" id="add-event-name" placeholder="Event Name" required>
+        <input type="date" id="add-event-date" required>
+        <input type="time" id="add-event-time" required>
+        <textarea id="add-event-description" placeholder="Event Description"></textarea>
+        <button type="submit">Add Event</button>
+    </form>
+
+    <h2>Your Schedule</h2>
+    <ul id="schedule-list">
+        <!-- Events will be added here -->
+    </ul>
+
+    <!-- Modal pour afficher les événements -->
+    <div id="event-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Events on <span id="modal-date"></span></h2>
+            <ul id="modal-event-list">
+                <!-- Les événements de la date sélectionnée seront affichés ici -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
